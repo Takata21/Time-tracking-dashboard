@@ -1,3 +1,187 @@
+:root {
+    --Blue: hsl(246, 80%, 60%);
+    --Orange: hsl(15, 100%, 70%);
+    --SoftBlue: hsl(195, 74%, 62%);
+    --LightRed: hsl(348, 100%, 68%);
+    --LimeGreen: hsl(145, 58%, 55%);
+    --Violet: hsl(264, 64%, 52%);
+    --SoftOrange: hsl(43, 84%, 65%);
+    --VeryDarkBlue: hsl(226, 43%, 10%);
+    --DarkBlue: hsl(235, 46%, 20%);
+    --DesaturatedBlue: hsl(235, 45%, 61%);
+    --PaleBlue: hsl(236, 100%, 87%);
+}
+
+
+/*--------------Reset----------------*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*------------------------------*/
+
+body {
+    padding: 5rem 1.5625rem;
+    background: var(--VeryDarkBlue);
+    color: white;
+    font-family: 'Rubik', sans-serif;
+}
+
+.container {
+    display: grid;
+    gap: 1.5625rem;
+}
+
+
+/*--------------Header Styles----------------*/
+
+header {
+    display: grid;
+    gap: 1rem;
+    background: var(--DarkBlue);
+    border-radius: 10px;
+}
+
+.person {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1.875rem;
+    background: var(--Blue);
+    border-radius: 10px;
+}
+
+.person-img {
+    width: 3.75rem;
+    border: 0.1875rem solid white;
+    border-radius: 50%;
+}
+
+.detail-profession {
+    font-size: 0.75rem;
+    color: var(--PaleBlue);
+    margin-bottom: 5px;
+}
+
+.detail-name {
+    font-weight: 300;
+    font-size: 1.125rem;
+}
+
+.menu {
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.menu-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+}
+
+.menu-list-item a {
+    display: inline-block;
+    color: var(--DesaturatedBlue);
+    font-weight: 300;
+    font-size: 18px;
+}
+
+.menu-list-item a:hover {
+    color: var(--PaleBlue);
+}
+
+.menu-list-item a.active {
+    color: white;
+}
+
+
+/*------------------------------*/
+
+
+/*--------------cards Styles----------------*/
+
+.dashboard-card-container {
+    display: grid;
+    gap: 25px;
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--DarkBlue);
+}
+
+.card-head {
+    display: grid;
+    justify-content: end;
+}
+
+.card-head.work {
+    background: var(--Orange);
+}
+
+.card-options>svg {
+    fill: var(--PaleBlue);
+}
+
+.card-info {
+    position: relative;
+    z-index: 100;
+    margin-top: -20px;
+    padding: 25px;
+    background: var(--DarkBlue);
+    border-radius: 10px;
+}
+
+.card-info-head {
+    display: grid;
+    grid-template-columns: 200px auto;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.card-title {
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.card-info-body {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+}
+
+.card-info-current {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.card-info-previous {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: var(--PaleBlue);
+}
+
+
+/*------------------------------*/
+
 .attribution {
     font-size: 11px;
     text-align: center;
