@@ -38,6 +38,7 @@ body {
     background: var(--VeryDarkBlue);
     color: white;
     font-family: 'Rubik', sans-serif;
+    transition: linear 1s all;
 }
 
 .container {
@@ -53,6 +54,8 @@ header {
     gap: 1rem;
     background: var(--DarkBlue);
     border-radius: 10px;
+    animation: entry;
+    animation-duration: 1s;
 }
 
 .person {
@@ -80,6 +83,10 @@ header {
 .detail-name {
     font-weight: 300;
     font-size: 1.125rem;
+}
+
+.detail-name br {
+    display: none;
 }
 
 .menu {
@@ -121,18 +128,52 @@ header {
 }
 
 .card {
+    animation: entry;
+    animation-duration: 1s;
+    transition: linear 1s ease-in;
     border-radius: 10px;
     overflow: hidden;
     background: var(--DarkBlue);
+    cursor: pointer;
+}
+
+@keyframes entry {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 .card-head {
     display: grid;
     justify-content: end;
+    padding-right: 25px;
 }
 
 .card-head.work {
     background: var(--Orange);
+}
+
+.card-head.play {
+    background: var(--SoftBlue);
+}
+
+.card-head.study {
+    background: var(--LightRed);
+}
+
+.card-head.exercise {
+    background: var(--LimeGreen);
+}
+
+.card-head.social {
+    background: var(--Violet);
+}
+
+.card-head.selfcare {
+    background: var(--SoftOrange);
 }
 
 .card-options>svg {
@@ -150,7 +191,7 @@ header {
 
 .card-info-head {
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: auto auto;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -164,6 +205,7 @@ header {
 
 .card-info-body {
     display: grid;
+    align-items: center;
     grid-template-columns: auto auto;
     justify-content: space-between;
 }
@@ -189,4 +231,42 @@ header {
 
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 720px) {
+    .card-info-body {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    .card-info-current {
+        font-size: 2rem;
+    }
+    .container {
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        grid-template-columns: 250px auto;
+    }
+    .dashboard-card-container {
+        gap: 30px;
+        grid-template-columns: repeat(3, 250px);
+        grid-template-rows: 1fr 1fr;
+    }
+    .detail-name {
+        font-size: 1.5rem;
+    }
+    .detail-name br {
+        display: block;
+    }
+    header {
+        height: 100%;
+    }
+    .person {
+        grid-template-columns: 1fr;
+    }
+    .menu-list {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        gap: 25px;
+    }
 }
